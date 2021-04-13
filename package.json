@@ -11,6 +11,11 @@
     "Dubai",
     "NFT"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rahul-mytokenized-capital/AIBC.git"
+  },
+  "homepage": "https://github.com/rahul-mytokenized-capital/AIBC.git",
   "author": "Rahul Pandey",
   "license": "ISC",
   "dependencies": {
