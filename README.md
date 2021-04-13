@@ -1,4 +1,4 @@
-# CryptoVouch
+# AIBC Contracts
 
 Smart contracts for CryptoVouch — ownable vouching on the blockchain.
 
@@ -7,7 +7,7 @@ Smart contracts for CryptoVouch — ownable vouching on the blockchain.
 Install packages
 
 ```
-yarn
+npm install
 ```
 
 Start a local blockchain like [Ganache](https://github.com/trufflesuite/ganache). You can use [Ganache CLI](https://github.com/trufflesuite/ganache-cli) or the [desktop client](http://truffleframework.com/ganache/).
