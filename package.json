@@ -22,18 +22,19 @@
     "@maticnetwork/walletconnect-provider": "0.0.1-beta.1",
     "@openzeppelin/contracts": "^4.0.0",
     "@truffle/hdwallet-provider": "^1.2.6",
-    "ethers": "^5.1.0",
-    "maticjs": "^1.0.1",
-    "openzeppelin-solidity": "^4.0.0",
-    "xmlhttprequest": "^1.8.0",
     "chai-as-promised": "^7.1.1",
     "chai-bignumber": "^2.0.2",
     "debug": "3.0.1",
     "eth-gas-reporter": "^0.1.1",
+    "ethers": "^5.1.0",
     "keccak": "^1.4.0",
+    "maticjs": "^1.0.1",
+    "openzeppelin-solidity": "^4.0.0",
     "sha256": "^0.2.0",
+    "solc": "^0.8.0",
     "truffle": "4.0.1",
     "web3": "0.20.1",
+    "xmlhttprequest": "^1.8.0",
     "zeppelin-solidity": "1.6.0"
   }
 }

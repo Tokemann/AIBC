@@ -1,7 +1,7 @@
 var GenesisContract = artifacts.require("GenesisContract");
-var MyTcErc20=artifacts.require("MyTcErc20");
+var CommunityContract=artifacts.require("CommunityContract");
 
 module.exports = function(deployer) {
   deployer.deploy(GenesisContract);
-  deployer.deploy(MyTcErc20);
+  deployer.deploy(CommunityContract);
 };
