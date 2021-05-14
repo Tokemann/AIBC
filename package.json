@@ -1,6 +1,6 @@
 {
   "name": "aibc",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "AIBC contract to mint NFTs ",
   "main": "index.js",
   "scripts": {
