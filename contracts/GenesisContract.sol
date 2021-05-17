@@ -9,6 +9,7 @@ contract GenesisContract is ERC721URIStorage {
 
 using Counters for Counters.Counter;
   Counters.Counter private _tokenIds;
+  
 
   address[] ownerAddresses;               // total minted Address
   uint256[] tokenList;                  // total minted Tokens
@@ -19,6 +20,7 @@ using Counters for Counters.Counter;
   mapping(uint256=>uint256) tokenPriceHash;                                 	// tokenId=>Price
   mapping(address=>uint[]) hashesLayersAllowedCount;							// address=>TokenId , TOTAL TOKENS
   mapping(uint256=>address[]) hashesLayersAllowedByTokenIdCount;   // TokenID=>Address , TOTAL Viewers
+  mapping(uint256=>address) customeErc20;
   
   
  
@@ -148,4 +150,21 @@ constructor() public ERC721("MYTCAIBC", "MYTCAIBC") {}
         uint256[] memory Y=tokenList;
         return Y;
     }
+    
+    function setERC20Address(uint256 tokenId,address erc20Address) public returns (bool)
+	{
+		 require(_exists(tokenId), "nonexistent token");
+		 address selfAddress=msg.sender;
+	     address ownerAddress=ownerOf(tokenId);
+		 require(ownerAddress==selfAddress,"invalid access");
+		 customeErc20[tokenId]=erc20Address; return true;
+		 
+	}
+	
+	 function getERC20Address(uint256 tokenId) public returns (address)
+	{
+		 require(_exists(tokenId), "nonexistent token");
+		 return customeErc20[tokenId];
+		 
+	}
 }
