@@ -4,4 +4,4 @@ const CustomERC20 = require("./build/abi/CustomERC20.abi");
 
 module.exports.GenesisContract = GenesisContract;
 module.exports.MyTcErc20 = MyTcErc20;
-module.exports.CustomERC20 = CustomERC20;
+module.exports.CustomERC20=CustomERC20;
