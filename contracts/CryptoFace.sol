@@ -17,17 +17,17 @@ using Counters for Counters.Counter;
   mapping(address => uint256) allowedByAddressHash;                                     	
   mapping(uint256 => address) ipfsHash;    
   mapping(uint256=>uint256) tokenPriceHash;                                 	// tokenId=>Price
-  
+  mapping(address=>uint[]) mytokens;
  
 constructor() public ERC721("CFACE", "CFACE") {}
 
     function addRecipient(address recipient) public returns (uint256)
 	{
-	  require(allowedByAddressHash[recipient]==0, "Not Allowed");	
+	  require(allowedByAddressHash[recipient]==0, "Invalid Address");	
 	  allowedByAddressHash[recipient]=1;	//  0 means not exist in register (so not allowed)
 	  return 1;
 	}
-	function addCryptoFace(address recipient, string memory hash,uint256 price)  public  returns (uint256)
+	function facialItem(address recipient, string memory hash,uint256 price)  public  returns (uint256)
 	{
 	 
 	    require(allowedByAddressHash[recipient]!=0, "Not Allowed");	
@@ -45,6 +45,7 @@ constructor() public ERC721("CFACE", "CFACE") {}
 				tokenList.push(newItemId);
 				ownerAddresses.push(recipient);
 				allowedByAddressHash[recipient]=0;
+				mytokens[recipient].push(newItemId);
 				return newItemId;
 				}
 				return 0;
@@ -102,4 +103,13 @@ constructor() public ERC721("CFACE", "CFACE") {}
         uint256[] memory Y=tokenList;
         return Y;
     }
+    
+    function getTokensOwner(address _viewerAddress) public view returns(uint256[] memory)
+	{
+	    
+	     uint256[] memory tokenIds =mytokens[_viewerAddress];
+       
+			return tokenIds;
+	}
+    
 }
