@@ -161,7 +161,7 @@ constructor() public ERC721("MYTCAIBC", "MYTCAIBC") {}
 		 
 	}
 	
-	 function getERC20Address(uint256 tokenId) public returns (address)
+	 function getERC20Address(uint256 tokenId) public view returns (address)
 	{
 		 require(_exists(tokenId), "nonexistent token");
 		 return customeErc20[tokenId];
