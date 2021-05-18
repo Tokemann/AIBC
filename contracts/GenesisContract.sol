@@ -21,6 +21,7 @@ using Counters for Counters.Counter;
   mapping(address=>uint[]) hashesLayersAllowedCount;							// address=>TokenId , TOTAL TOKENS
   mapping(uint256=>address[]) hashesLayersAllowedByTokenIdCount;   // TokenID=>Address , TOTAL Viewers
   mapping(uint256=>address) customeErc20;
+  mapping(address=>uint[]) mytokens;
   
   
  
@@ -45,6 +46,7 @@ constructor() public ERC721("MYTCAIBC", "MYTCAIBC") {}
 				_setTokenURI(newItemId, hashes[newItemId]);  			    // toekenId=>IPFS Hash
 				tokenPriceHash[newItemId]=price;
 				tokenList.push(newItemId);
+				mytokens[recipient].push(newItemId);
 				return newItemId;
 			}
 		else require(1==0, "Balance Bounced");	
@@ -139,6 +141,14 @@ constructor() public ERC721("MYTCAIBC", "MYTCAIBC") {}
 			return tokenIds;
 	}
 	
+	function getTokensOwner(address _viewerAddress) public view returns(uint256[] memory)
+	{
+	    
+	     uint256[] memory tokenIds =mytokens[_viewerAddress];
+       
+			return tokenIds;
+	}
+	
     function getOwnerList() public view returns(address[] memory)
     {
         address[] memory X=ownerAddresses;
@@ -161,7 +171,7 @@ constructor() public ERC721("MYTCAIBC", "MYTCAIBC") {}
 		 
 	}
 	
-	 function getERC20Address(uint256 tokenId) public view returns (address)
+	 function getERC20Address(uint256 tokenId) public returns (address)
 	{
 		 require(_exists(tokenId), "nonexistent token");
 		 return customeErc20[tokenId];
