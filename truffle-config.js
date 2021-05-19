@@ -48,7 +48,7 @@ module.exports = {
       provider: () => new HDWalletProvider(mnemonic, `https://rpc-mumbai.matic.today`),
       network_id: 80001,
       confirmations: 2,
-      timeoutBlocks: 2000,
+      timeoutBlocks: 20000,
       skipDryRun: true
     },
     // Useful for testing. The `development` name is special - truffle uses it by default

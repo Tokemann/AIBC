@@ -88,6 +88,13 @@ constructor() public ERC721("CFACE", "CFACE") {}
 	    
 	} 
 	
+	function getTokenOthers(uint256 tokenId) public view returns(string memory)
+	{
+	    require(_exists(tokenId), "nonexistent token");
+	    return getToken(tokenId);
+	    
+	} 
+	
 	
 	
 	
