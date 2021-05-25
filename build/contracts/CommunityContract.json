@@ -24237,12 +24237,12 @@
     "80001": {
       "events": {},
       "links": {},
-      "address": "0x3c74c0698D2181801Bc7074c79C6cD7544Da1160",
-      "transactionHash": "0x844c20a237585dcca160fb25c4470c0775b7a9e289f45cd320c1b25c5d8606a6"
+      "address": "0xA22890e89d6F13bCdC7A8E31817153e71e39dFEB",
+      "transactionHash": "0x0175efc0bd6299ed124429c11e3405a50a6850ccd66f4db5cbf3a1699395bec2"
     }
   },
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-05-19T09:51:34.338Z",
+  "updatedAt": "2021-05-25T07:56:24.869Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
